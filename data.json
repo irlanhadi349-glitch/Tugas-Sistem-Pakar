@@ -1,0 +1,59 @@
+{
+  "judul": "Penyebab Smartphone Cepat Panas dan Baterai Boros",
+  "batas": "Aturan berasal dari dokumentasi resmi dukungan Apple dan Samsung. Hanya mencakup kasus penggunaan berat (gaming, streaming), masalah layar, pengisian daya, suhu lingkungan, dan sinyal. Hasilnya berupa saran diagnosis awal penyebab panas, bukan diagnosis kerusakan perangkat keras (hardware) secara fisik.",
+  "sumber": {
+    "S1": "Samsung Support: Why does my Galaxy phone get hot?, https://www.samsung.com/us/support/answer/ANS00076952/, diakses 13 Nov 2026",
+    "S2": "Apple Support: If your iPhone or iPad gets too hot or too cold, https://support.apple.com/en-us/HT201678, diakses 13 Nov 2026"
+  },
+  "aturan": [
+    {
+      "id": "R1", 
+      "jika": ["sering main game berat (Genshin, PUBG, dsb)", "streaming video resolusi tinggi lama"], 
+      "mode": "atau", 
+      "maka": "beban prosesor tinggi", 
+      "sumber": "S1"
+    },
+    {
+      "id": "R2", 
+      "jika": ["kecerahan layar maksimal", "refresh rate 120Hz selalu aktif"], 
+      "mode": "dan", 
+      "maka": "konsumsi daya layar berlebih", 
+      "sumber": "S1"
+    },
+    {
+      "id": "R3", 
+      "jika": ["beban prosesor tinggi", "konsumsi daya layar berlebih"], 
+      "mode": "dan", 
+      "maka": "Overheating Penggunaan Layar & Prosesor Berat", 
+      "sumber": "S1"
+    },
+    {
+      "id": "R4", 
+      "jika": ["sinyal seluler lemah", "selalu menggunakan mobile data (4G/5G)"], 
+      "mode": "dan", 
+      "maka": "Overheating Pencarian Sinyal Seluler", 
+      "sumber": "S2"
+    },
+    {
+      "id": "R5", 
+      "jika": ["beban prosesor tinggi", "digunakan sambil diisi daya (charging)"], 
+      "mode": "dan", 
+      "maka": "Overheating Ekstrem (Charging + Heavy Usage)", 
+      "sumber": "S2"
+    },
+    {
+      "id": "R6",
+      "jika": ["terpapar sinar matahari langsung", "ditinggalkan di dalam mobil atau tempat panas"],
+      "mode": "atau",
+      "maka": "suhu lingkungan ekstrem",
+      "sumber": "S2"
+    },
+    {
+      "id": "R7",
+      "jika": ["suhu lingkungan ekstrem", "beban prosesor tinggi"],
+      "mode": "dan",
+      "maka": "Overheating Kritis Lingkungan & Prosesor (Risiko Mati Otomatis)",
+      "sumber": "S2"
+    }
+  ]
+}
